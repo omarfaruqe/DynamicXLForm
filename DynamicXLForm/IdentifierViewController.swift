@@ -10,20 +10,36 @@ import UIKit
 
 class IdentifierViewController: UIViewController {
 
+    var delegate: writeIdentifierBackDelegate?
+    
     @IBOutlet weak var identifierLabel: UILabel!
     @IBOutlet weak var identifierTextField: UITextField!
+       
     
+    @IBAction func testIdentifier(sender: UIButton) {
+        
+        println(identifierTextField.text)
+        delegate?.writeIdentifierNameBack(identifierTextField.text)
+    }
+    
+    var passingValue:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        identifierLabel.text = passingValue
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

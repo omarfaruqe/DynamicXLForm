@@ -10,4 +10,9 @@ import Foundation
 
 protocol writeValueBackDelegate {
     func writeValueBack(value: String)
+    
+}
+
+protocol writeIdentifierBackDelegate{
+    func writeIdentifierNameBack(value: String)
 }

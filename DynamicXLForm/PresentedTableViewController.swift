@@ -9,6 +9,7 @@ class PresentedTableViewController: XLFormViewController {
     
     // delegate for FirstViewController
     var delegate: writeValueBackDelegate?
+    var formItemName: String = ""
     
     
     private struct FormItem{
@@ -36,11 +37,7 @@ class PresentedTableViewController: XLFormViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! IdentifierViewController
-        destination.identifierLabel.text = "AnyText"
 
-    }
     
 //    @IBAction func closePopover(sender: UIBarButtonItem) {
 //        
@@ -176,11 +173,11 @@ class PresentedTableViewController: XLFormViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let item = tableView.cellForRowAtIndexPath(indexPath)!.textLabel!.text! as String
+        formItemName = tableView.cellForRowAtIndexPath(indexPath)!.textLabel!.text! as String
         
         //println(item)
         
-        delegate?.writeValueBack(item)
+        delegate?.writeValueBack(formItemName)
         
         
         
@@ -194,19 +191,26 @@ class PresentedTableViewController: XLFormViewController {
 //        var myCustomViewController: ViewController = ViewController(nibName: nil, bundle: nil)
 //        myCustomViewController.addFormItem()
 
-        var row = self.form.formRowAtIndex(indexPath);
-        if (row!.tag == "texttag") {
-           // DDLogVerbose("Clicked row");
-            var vc = IdentifierViewController() //home: self.home);
-            self.navigationController?.pushViewController(vc, animated: true);
-        }
-        else {
-            super.tableView(tableView, didSelectRowAtIndexPath: indexPath);
-        }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+//        var row = self.form.formRowAtIndex(indexPath);
+//        if (row!.tag == "texttag") {
+//           // DDLogVerbose("Clicked row");
+//            var vc = IdentifierViewController() //home: self.home);
+//            self.navigationController?.pushViewController(vc, animated: true);
+//        }
+//        else {
+//            super.tableView(tableView, didSelectRowAtIndexPath: indexPath);
+//        }
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        
+        performSegueWithIdentifier("identifierSegue", sender: nil)
         
     }
 
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let destination = segue.destinationViewController as! IdentifierViewController
+            destination.passingValue = formItemName
+        }
+    
 //    override func viewWillAppear(animated: Bool) {
 //                for key in defaults.dictionaryRepresentation().keys {
 //                    defaults.removeObjectForKey(key.description)

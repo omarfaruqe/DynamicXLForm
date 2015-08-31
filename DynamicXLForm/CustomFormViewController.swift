@@ -9,7 +9,7 @@
 import UIKit
 import XLForm
 
-class CustomFormViewController: XLFormViewController, UIPopoverPresentationControllerDelegate, writeValueBackDelegate {
+class CustomFormViewController: XLFormViewController, UIPopoverPresentationControllerDelegate, writeValueBackDelegate, writeIdentifierBackDelegate {
     
     @IBAction func saveForm(sender: UIBarButtonItem) {
         println("Form Saved with following \n \(formItem)")
@@ -80,6 +80,12 @@ class CustomFormViewController: XLFormViewController, UIPopoverPresentationContr
         var secondViewController = (segue.destinationViewController.visibleViewController as!  PresentedTableViewController)
         secondViewController.delegate = self
     }
+    
+    func writeIdentifierNameBack(value: String){
+        println("Identifiger: \(value)")
+    }
+    
+    
     
     func writeValueBack(value: String) {
         // this is my value from my second View Controller
