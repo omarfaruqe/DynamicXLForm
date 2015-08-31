@@ -1,0 +1,6 @@
+framework module Pods_DynamicXLForm {
+  umbrella header "Pods-DynamicXLForm-umbrella.h"
+
+  export *
+  module * { export * }
+}

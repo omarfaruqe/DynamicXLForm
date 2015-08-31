@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42289CA51B949DF100B820C7 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42289CA41B949DF000B820C7 /* Protocol.swift */; };
+		42DCB1C51B94B2AA003F9405 /* IdentifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCB1C41B94B2AA003F9405 /* IdentifierViewController.swift */; };
 		42FC14281B90E7DD002E745E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC14271B90E7DD002E745E /* AppDelegate.swift */; };
 		42FC142D1B90E7DD002E745E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FC142B1B90E7DD002E745E /* Main.storyboard */; };
 		42FC142F1B90E7DD002E745E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FC142E1B90E7DD002E745E /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		2CEC9EA949D0BFD39F51D008 /* Pods-DynamicXLForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicXLForm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicXLForm/Pods-DynamicXLForm.debug.xcconfig"; sourceTree = "<group>"; };
 		42289CA41B949DF000B820C7 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		42DCB1C41B94B2AA003F9405 /* IdentifierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierViewController.swift; sourceTree = "<group>"; };
 		42FC14221B90E7DD002E745E /* DynamicXLForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicXLForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FC14261B90E7DD002E745E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FC14271B90E7DD002E745E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				42FC14471B90E900002E745E /* CustomFormViewController.swift */,
 				42289CA41B949DF000B820C7 /* Protocol.swift */,
 				42FC14481B90E900002E745E /* PresentedTableViewController.swift */,
+				42DCB1C41B94B2AA003F9405 /* IdentifierViewController.swift */,
 				42FC14251B90E7DD002E745E /* Supporting Files */,
 			);
 			path = DynamicXLForm;
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FC144A1B90E900002E745E /* PresentedTableViewController.swift in Sources */,
+				42DCB1C51B94B2AA003F9405 /* IdentifierViewController.swift in Sources */,
 				42FC14491B90E900002E745E /* CustomFormViewController.swift in Sources */,
 				42FC14281B90E7DD002E745E /* AppDelegate.swift in Sources */,
 				42289CA51B949DF100B820C7 /* Protocol.swift in Sources */,

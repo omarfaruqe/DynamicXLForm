@@ -74,7 +74,7 @@ class CustomFormViewController: XLFormViewController, UIPopoverPresentationContr
 //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var secondViewController = (segue.destinationViewController as!  PresentedTableViewController)
+        var secondViewController = (segue.destinationViewController.visibleViewController as!  PresentedTableViewController)
         secondViewController.delegate = self
     }
     

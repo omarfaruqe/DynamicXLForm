@@ -1,0 +1,21 @@
+PODS:
+  - JGMethodSwizzler (2.0.1)
+  - MZAppearance (1.1.5)
+  - MZFormSheetPresentationController (1.1.2):
+    - JGMethodSwizzler
+    - MZAppearance
+  - XLForm (3.0.2)
+
+DEPENDENCIES:
+  - JGMethodSwizzler
+  - MZAppearance
+  - MZFormSheetPresentationController (~> 1.1)
+  - XLForm (~> 3.0)
+
+SPEC CHECKSUMS:
+  JGMethodSwizzler: e0ea5c1c6c55304ec4ef3f54e441400c6735c899
+  MZAppearance: 6e9dc64e42074c0a19812a327f590746c3283bab
+  MZFormSheetPresentationController: 2e848d89c0741aef554d0ae6b138be5dc25a479f
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
+
+COCOAPODS: 0.38.2

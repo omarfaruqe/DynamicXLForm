@@ -27,21 +27,29 @@ class PresentedTableViewController: XLFormViewController {
         }
     }
 
-    
-    @IBAction func closePopover(sender: UIBarButtonItem) {
-        
-        var tmpController :UIViewController! = self.presentingViewController;
-        
-        self.dismissViewControllerAnimated(false, completion: {()->Void in
-            println("done");
-            tmpController.dismissViewControllerAnimated(false, completion: nil);
-        });
-        
-//        for key in defaults.dictionaryRepresentation().keys {
-//            defaults.removeObjectForKey(key.description)
-//        }
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: Selector("close"))
     }
+    
+    func close() -> Void {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+//    @IBAction func closePopover(sender: UIBarButtonItem) {
+//        
+//        var tmpController :UIViewController! = self.presentingViewController;
+//        
+//        self.dismissViewControllerAnimated(false, completion: {()->Void in
+//            println("done");
+//            tmpController.dismissViewControllerAnimated(false, completion: nil);
+//        });
+//        
+////        for key in defaults.dictionaryRepresentation().keys {
+////            defaults.removeObjectForKey(key.description)
+////        }
+//        
+//    }
     
 //    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
 //        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -63,7 +71,7 @@ class PresentedTableViewController: XLFormViewController {
         var section : XLFormSectionDescriptor
         var row : XLFormRowDescriptor
         
-        form = XLFormDescriptor(title: "Dates") as XLFormDescriptor
+        form = XLFormDescriptor(title: "Form Template") as XLFormDescriptor
         
         section = XLFormSectionDescriptor()
         form.addFormSection(section)
@@ -180,18 +188,18 @@ class PresentedTableViewController: XLFormViewController {
 
     }
 
-    override func viewWillAppear(animated: Bool) {
-                for key in defaults.dictionaryRepresentation().keys {
-                    defaults.removeObjectForKey(key.description)
-                }
-    }
+//    override func viewWillAppear(animated: Bool) {
+//                for key in defaults.dictionaryRepresentation().keys {
+//                    defaults.removeObjectForKey(key.description)
+//                }
+//    }
     
 }
 
 
 
-protocol MyProtocol
-{
-    func sendArrayToPreviousVC(item:Int)
-}
+//protocol MyProtocol
+//{
+//    func sendArrayToPreviousVC(item:Int)
+//}
 

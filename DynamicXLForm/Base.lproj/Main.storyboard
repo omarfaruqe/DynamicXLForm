@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0fe-zo-Vye">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Custom Form View Controller-->
@@ -20,7 +21,7 @@
                     <navigationItem key="navigationItem" id="VIh-Zo-I87">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TBW-UA-9sc">
                             <connections>
-                                <segue destination="9gy-SC-TdJ" kind="custom" customClass="MZFormSheetPresentationControllerSegue" id="P5j-CG-eqr"/>
+                                <segue destination="TDQ-1x-dzR" kind="custom" identifier="segue" customClass="MZFormSheetPresentationControllerSegue" id="OjF-3r-Qqy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -29,28 +30,77 @@
             </objects>
             <point key="canvasLocation" x="1185" y="160"/>
         </scene>
-        <!--Presented Table View Controller-->
+        <!--Add Form Item-->
         <scene sceneID="y1d-Uv-O0q">
             <objects>
-                <viewController id="9gy-SC-TdJ" customClass="PresentedTableViewController" customModule="DynamicXLForm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Form Item" id="9gy-SC-TdJ" customClass="PresentedTableViewController" customModule="DynamicXLForm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fxS-BN-pPX"/>
                         <viewControllerLayoutGuide type="bottom" id="4zc-po-iKM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xL8-Za-vXz">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Form Type" id="EXC-IE-UoF"/>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="400"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="400"/>
+                    <connections>
+                        <segue destination="NbH-Uh-sNG" kind="show" identifier="identifierSegue" id="3TT-KZ-V8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loq-5j-pZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="160"/>
+            <point key="canvasLocation" x="2693" y="160"/>
+        </scene>
+        <!--Identifier View Controller-->
+        <scene sceneID="whW-fH-c1a">
+            <objects>
+                <viewController id="NbH-Uh-sNG" customClass="IdentifierViewController" customModule="DynamicXLForm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdJ-lZ-sId"/>
+                        <viewControllerLayoutGuide type="bottom" id="dez-V8-gDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2ul-6P-4gd">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swh-B3-rOL">
+                                <rect key="frame" x="141" y="72" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifier Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NH4-Uq-U1V">
+                                <rect key="frame" x="16" y="72" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="swh-B3-rOL" firstAttribute="leading" secondItem="NH4-Uq-U1V" secondAttribute="trailing" constant="8" symbolic="YES" id="0FR-6D-ukj"/>
+                            <constraint firstItem="NH4-Uq-U1V" firstAttribute="top" secondItem="zdJ-lZ-sId" secondAttribute="bottom" constant="8" symbolic="YES" id="1yv-0p-g9R"/>
+                            <constraint firstItem="dez-V8-gDv" firstAttribute="top" secondItem="NH4-Uq-U1V" secondAttribute="bottom" constant="107" id="CQK-Cy-KSU"/>
+                            <constraint firstItem="swh-B3-rOL" firstAttribute="trailing" secondItem="2ul-6P-4gd" secondAttribute="trailingMargin" id="GxG-ql-FVO"/>
+                            <constraint firstItem="NH4-Uq-U1V" firstAttribute="leading" secondItem="2ul-6P-4gd" secondAttribute="leadingMargin" id="bKI-vk-udt"/>
+                            <constraint firstItem="swh-B3-rOL" firstAttribute="top" secondItem="NH4-Uq-U1V" secondAttribute="top" id="wH8-vx-xzT"/>
+                            <constraint firstItem="dez-V8-gDv" firstAttribute="top" secondItem="NH4-Uq-U1V" secondAttribute="bottom" constant="107" id="wbw-mh-yxH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CQK-Cy-KSU"/>
+                                <exclude reference="wbw-mh-yxH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="200"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouF-VW-bLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jTD-sN-e78">
@@ -69,6 +119,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45c-cp-ZXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373" y="160"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VQG-d5-xBS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TDQ-1x-dzR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzb-lb-Sop">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9gy-SC-TdJ" kind="relationship" relationship="rootViewController" id="lNx-Re-uHr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a36-yR-DCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="160"/>
         </scene>
     </scenes>
 </document>
