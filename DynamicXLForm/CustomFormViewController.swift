@@ -11,6 +11,9 @@ import XLForm
 
 class CustomFormViewController: XLFormViewController, UIPopoverPresentationControllerDelegate, writeValueBackDelegate {
     
+    @IBAction func saveForm(sender: UIBarButtonItem) {
+        println("Form Saved with following \n \(formItem)")
+    }
     var formItem = [String]()
    // var someInts = [Int]()
 

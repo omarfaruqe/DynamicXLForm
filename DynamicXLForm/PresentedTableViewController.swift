@@ -36,6 +36,12 @@ class PresentedTableViewController: XLFormViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController as! IdentifierViewController
+        destination.identifierLabel.text = "AnyText"
+
+    }
+    
 //    @IBAction func closePopover(sender: UIBarButtonItem) {
 //        
 //        var tmpController :UIViewController! = self.presentingViewController;
@@ -176,6 +182,8 @@ class PresentedTableViewController: XLFormViewController {
         
         delegate?.writeValueBack(item)
         
+        
+        
 //       // rowindex = indexPath.item
 ////    
 //       println("Item: \(item)")
@@ -186,6 +194,17 @@ class PresentedTableViewController: XLFormViewController {
 //        var myCustomViewController: ViewController = ViewController(nibName: nil, bundle: nil)
 //        myCustomViewController.addFormItem()
 
+        var row = self.form.formRowAtIndex(indexPath);
+        if (row!.tag == "texttag") {
+           // DDLogVerbose("Clicked row");
+            var vc = IdentifierViewController() //home: self.home);
+            self.navigationController?.pushViewController(vc, animated: true);
+        }
+        else {
+            super.tableView(tableView, didSelectRowAtIndexPath: indexPath);
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        
     }
 
 //    override func viewWillAppear(animated: Bool) {

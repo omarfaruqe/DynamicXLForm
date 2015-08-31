@@ -19,6 +19,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VIh-Zo-I87">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="OgB-ti-Qd6">
+                            <connections>
+                                <action selector="saveForm:" destination="IxG-zv-Lgg" id="7fY-mh-FVi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TBW-UA-9sc">
                             <connections>
                                 <segue destination="TDQ-1x-dzR" kind="custom" identifier="segue" customClass="MZFormSheetPresentationControllerSegue" id="OjF-3r-Qqy"/>
@@ -53,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2693" y="160"/>
         </scene>
-        <!--Identifier View Controller-->
+        <!--Identifier-->
         <scene sceneID="whW-fH-c1a">
             <objects>
                 <viewController id="NbH-Uh-sNG" customClass="IdentifierViewController" customModule="DynamicXLForm" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,16 +67,16 @@
                         <viewControllerLayoutGuide type="bottom" id="dez-V8-gDv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2ul-6P-4gd">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swh-B3-rOL">
-                                <rect key="frame" x="141" y="72" width="243" height="30"/>
+                                <rect key="frame" x="141" y="72" width="443" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifier Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NH4-Uq-U1V">
-                                <rect key="frame" x="16" y="72" width="117" height="21"/>
+                                <rect key="frame" x="16" y="72" width="117" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -94,13 +99,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Identifier" id="XMg-Bv-jaN"/>
                     <value key="contentSizeForViewInPopover" type="size" width="400" height="200"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="200"/>
+                    <connections>
+                        <outlet property="identifierLabel" destination="NH4-Uq-U1V" id="uQI-B2-RgL"/>
+                        <outlet property="identifierTextField" destination="swh-B3-rOL" id="Q1W-mZ-poc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouF-VW-bLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="160"/>
+            <point key="canvasLocation" x="3438" y="160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jTD-sN-e78">

@@ -10,6 +10,10 @@ import UIKit
 
 class IdentifierViewController: UIViewController {
 
+    @IBOutlet weak var identifierLabel: UILabel!
+    @IBOutlet weak var identifierTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
